@@ -1,0 +1,233 @@
+.aiChatContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.chatToggleBtn {
+  background: #ffffff;
+  border: 2px solid #000000;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  color: #000000;
+}
+
+.chatToggleBtn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.chatWindow {
+  width: 400px;
+  height: 500px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.chatHeader {
+  background: #f9f9f9;
+  border-bottom: 1px solid #000000;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatTitle span:first-child {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.chatSubtitle {
+  font-size: 12px;
+  color: #666666;
+  font-style: italic;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.chatCloseBtn {
+  background: none;
+  border: none;
+  font-size: 14pt;
+  cursor: pointer;
+  color: #666666;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatCloseBtn:hover {
+  color: #000000;
+}
+
+.chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.userMessage {
+  justify-content: flex-end;
+}
+
+.assistantMessage {
+  justify-content: flex-start;
+}
+
+.messageContent {
+  max-width: 85%;
+  padding: 12px 16px;
+  border: 1px solid #e1e5e9;
+  background: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #24292f;
+  word-wrap: break-word;
+}
+
+.userMessage .messageContent {
+  background: #0969da;
+  border-color: #0969da;
+  color: #ffffff;
+}
+
+.assistantMessage .messageContent {
+  background: #f6f8fa;
+  border-color: #e1e5e9;
+  color: #24292f;
+}
+
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typingIndicator span {
+  width: 4px;
+  height: 4px;
+  background: #666666;
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typingIndicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typingIndicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.chatInputContainer {
+  border-top: 1px solid #000000;
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.chatInput {
+  flex: 1;
+  border: 1px solid #d1d9e0;
+  padding: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  border-radius: 6px;
+  color: #24292f;
+  background: #ffffff;
+  line-height: 1.4;
+}
+
+.chatInput:focus {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
+}
+
+.chatInput::placeholder {
+  color: #656d76;
+}
+
+.sendBtn {
+  background: #0969da;
+  border: 1px solid #0969da;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: #0860ca;
+  border-color: #0860ca;
+}
+
+.sendBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #8c959f;
+  border-color: #8c959f;
+}
+
+@media (max-width: 480px) {
+  .chatWindow {
+    width: 300px;
+    height: 400px;
+  }
+  
+  .aiChatContainer {
+    bottom: 15px;
+  }
+} 

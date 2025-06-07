@@ -1,0 +1,27 @@
+{
+  "name": "fortexa-trading-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.17.2",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
+    "mermaid": "^10.6.1",
+    "next": "14.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "eslint": "8.54.0",
+    "eslint-config-next": "14.0.3"
+  }
+}
