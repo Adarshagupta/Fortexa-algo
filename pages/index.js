@@ -6,7 +6,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 import remarkGfm from 'remark-gfm'
-import AIChat from '../components/AIChat'
+// import AIChat from '../components/AIChat' // Disabled for static export
 
 const MermaidRenderer = ({ content }) => {
   const ref = useRef(null)
@@ -253,6 +253,8 @@ export default function Home({ content, data }) {
           </div>
         </main>
 
+        {/* Floating Edit Button - Disabled for static export */}
+        {/*
         <div className="floating-actions">
           <button 
             className="edit-btn"
@@ -262,8 +264,9 @@ export default function Home({ content, data }) {
             {isEditing ? '👁️' : '✏️'}
           </button>
         </div>
+        */}
 
-        <AIChat />
+        {/* <AIChat /> */} {/* Disabled for static export */}
       </div>
 
       <style jsx>{`
